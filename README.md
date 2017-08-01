@@ -33,3 +33,9 @@ Edit the file to configure the pins used for pan/tilt if needed.
 Update the PanTilt plugin to point to your script.
 
 Done.
+
+### Snapshots
+
+<img src="https://raw.githubusercontent.com/c-devine/OctoPrint-PanTilt-Script/snapshots/assets/img/pigpio1.png?raw=true">
+<img src="https://raw.githubusercontent.com/c-devine/OctoPrint-PanTilt-Script/snapshots/assets/img/pigpio2.png?raw=true">
+<img src="https://raw.githubusercontent.com/c-devine/OctoPrint-PanTilt-Script/snapshots/assets/img/harness.png?raw=true">
