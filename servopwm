@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# bash script to drive a pan/tilt gimbal connected to a Raspberry Pi
+# uses the pigpio pigs interface: http://abyz.co.uk/rpi/pigpio/
+
+if [ $# -ne 2 ]; then
+  echo "Please pass in 2 arguments: <pan> <tilt>"
+  exit
+fi
+
+# helper funtions
+calc(){ awk "BEGIN { print "$*" }"; }
+calc_int(){ awk "BEGIN { print int("$*") }"; }
+
+# use BCM pin numbers for pan/tilt pins -  edit if different
+panPin=23
+tiltPin=24
+
+# setup min and max values - match what is in the gui
+panMin=0
+panMax=180
+tiltMin=0
+tiltMax=180
+
+panRange=$(calc_int $panMax-$panMin)
+tiltRange=$(calc_int $tiltMax-$tiltMin)
+pan=$(calc_int $1/$panRange*1000+1000)
+tilt=$(calc_int $2/$tiltRange*1000+1000)
+
+pigs SERVO $panPin $pan
+pigs SERVO $tiltPin $tilt
