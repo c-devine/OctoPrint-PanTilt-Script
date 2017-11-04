@@ -2,7 +2,7 @@
 Command line script that can be used with the OctoPrint [OctoPrint-PanTilt Plugin](https://github.com/Salandora/OctoPrint-PanTilt)
 on the Raspberry Pi.
 This script uses the [pigpio](http://abyz.co.uk/rpi/pigpio) command line interface to drive a pan/tilt servo gimbal.
-The pigpio daemon must be downloaded, installed and started.  Note: limited on Raspberry Pi 3 only :)
+The pigpio daemon must be downloaded, installed and started.  Note: limited test on Raspberry Pi3, but also reported to work on Pi2 :)
 
 
 ### Installation
@@ -29,6 +29,8 @@ Example of service setup: https://github.com/joan2937/pigpio/tree/master/util
 Copy the script *servopwm* to /home/pi/scripts or some other location on the Raspberry Pi.
 
 Edit the file to configure the pins used for pan/tilt if needed.  panPin=23 tiltPin=24 by default.
+
+Make the script executable:  `chmod a+x ./servopwm`
 
 Update the PanTilt plugin to point to your script.
 
